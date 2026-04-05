@@ -40,4 +40,16 @@
                 app:destination="@id/recoverAccountFragment" />
         </fragment>
     </navigation>
+    <fragment
+        android:id="@+id/SplashFragment"
+        android:name="com.gabriel.task.ui.SplashFragment"
+        android:label="SplashFragment" >
+
+        <action
+            android:id="@+id/action_splashFragment_to_id"
+            app:destination="@+id/autentication"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
 </navigation>
