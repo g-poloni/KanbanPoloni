@@ -4,6 +4,8 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:windowBackground">@color/padrao</item>
+        <item name="colorPrimary">@color/padrao</item>
+        <item name="colorPrimaryVariant">@color/padrao</item>
     </style>
 
     <style name="Theme.Task" parent="Base.Theme.Task" />
