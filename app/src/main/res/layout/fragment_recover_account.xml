@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="40dp"
+            android:id="@+id/toolbar"
             app:navigationIcon="@drawable/back1">
 
             <TextView
@@ -26,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Recuperar Conta"
+                android:paddingTop="20dp"
                 android:textColor="@color/white" />
 
         </com.google.android.material.appbar.MaterialToolbar>

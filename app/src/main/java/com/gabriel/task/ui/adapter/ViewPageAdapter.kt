@@ -8,23 +8,23 @@ import java.util.ArrayList
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
     FragmentStateAdapter(fragmentActivity) {
 
-    private val fragmentList: MutableList<Fragment> = ArrayList()
-    private val titleList: MutableList<Int> = ArrayList()
+        private val fragmentList: MutableList<Fragment> = ArrayList()
+        private val titleList: MutableList<Int> = ArrayList()
 
-    fun getTitle(position: Int): Int {
-        return titleList[position]
-    }
+        fun getTitle(position: Int): Int {
+            return titleList[position]
+        }
 
-    fun addFragment(fragment: Fragment, title: Int) {
-        fragmentList.add(fragment)
-        titleList.add(title)
-    }
+        fun addFragment(fragment: Fragment, title: Int) {
+            fragmentList.add(fragment)
+            titleList.add(title)
+        }
 
-    override fun createFragment(position: Int): Fragment {
-        return fragmentList[position]
-    }
+        override fun createFragment(position: Int): Fragment {
+            return fragmentList[position]
+        }
 
-    override fun getItemCount(): Int {
-        return fragmentList.size
+        override fun getItemCount(): Int {
+            return fragmentList.size
+        }
     }
-}

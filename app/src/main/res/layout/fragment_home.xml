@@ -12,45 +12,56 @@
         android:background="@color/padrao"
         android:elevation="4dp">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/padrao"
-            android:contentDescription="Tabs"
-            android:elevation="0dp"
-            app:tabMode="scrollable"
-            app:tabPaddingStart="24dp"
-            app:tabPaddingEnd="24dp"
-            app:tabTextAppearance="@style/CustomTabLayout"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tabIndicatorColor="@color/white"
-            app:tabSelectedTextColor="@color/black"
-            app:tabTextColor="@color/white" />
+            android:id="@+id/constraintLayout1">
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/Tabs"
+                android:background="@color/padrao"
+                android:contentDescription="Tabs"
+                android:elevation="0dp"
+                app:tabMode="scrollable"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                app:tabTextAppearance="@style/CustomTabLayout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabIndicatorColor="@color/white"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextColor="@color/white">
+                
+            </com.google.android.material.tabs.TabLayout>
+            <ImageButton
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:background="@color/padrao"
+                android:contentDescription="logout"
+                android:padding="24dp"
+                android:src="@drawable/logout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageButton
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="290dp"
-            android:background="@color/padrao"
-            android:contentDescription="Logout"
-            android:padding="24dp"
-            android:src="@drawable/logoutic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            </ImageButton>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </androidx.viewpager2.widget.ViewPager2>
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

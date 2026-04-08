@@ -10,6 +10,7 @@ import com.gabriel.task.databinding.FragmentHomeBinding
 import com.gabriel.task.ui.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
+
 class HomeFragment : Fragment(){
 
     private var _binding: FragmentHomeBinding? = null
@@ -40,7 +41,7 @@ class HomeFragment : Fragment(){
 
         binding.viewPager.offscreenPageLimit = pageAdapter.itemCount
 
-        TabLayoutMediator(binding.tabs, binding.viewPager) { tab, position ->
+        TabLayoutMediator(binding.Tabs, binding.viewPager) { tab, position ->
             tab.text = getString(pageAdapter.getTitle(position))
         }.attach()
     }

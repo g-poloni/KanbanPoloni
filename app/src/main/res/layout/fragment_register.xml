@@ -19,12 +19,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:navigationIcon="@drawable/back1"
+            android:id="@+id/toolbar"
             android:paddingTop="40dp">
             <TextView
                 android:id="@+id/criarConta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Criar Conta"
+                android:paddingTop="20dp"
                 android:textColor="@color/white"
                 android:layout_gravity="center"/>
 
