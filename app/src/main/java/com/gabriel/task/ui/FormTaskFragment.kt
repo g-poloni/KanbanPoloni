@@ -40,7 +40,7 @@ class FormTaskFragment : Fragment () {
         if (description.isNotBlank()) {
             Toast.makeText(requireContext(), "Tudo OK!", Toast.LENGTH_SHORT).show()
         } else {
-            showBottomSheet(message = R.string.description_eft_fragment)
+            showBottomSheet(message = R.string.description_eft_fragment) //erro na figura 141
         }
     }
 
