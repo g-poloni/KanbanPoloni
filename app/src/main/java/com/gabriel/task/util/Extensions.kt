@@ -3,6 +3,9 @@ package com.gabriel.task.util
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.gabriel.task.R
+import com.gabriel.task.databinding.BottomSheetBinding
 
 fun Fragment.initToolbar(toolbar: Toolbar) {
     (activity as AppCompatActivity).setSupportActionBar(toolbar)
@@ -13,3 +16,28 @@ fun Fragment.initToolbar(toolbar: Toolbar) {
     }
 }
 
+fun Fragment.showBottomSheet(
+    titleDialog: Int? = null,
+    titleButton: Int? = null,
+    message: Int,
+    onClick: () -> Unit = {}
+){
+    val bottomSheetDialog = BottomSheetDialog(requireContext())
+
+    // O erro no 'layoutInflater' deve sumir após o import do Binding
+    val binding: BottomSheetBinding =
+        BottomSheetBinding.inflate(layoutInflater, null, false)
+
+    binding.textviewTitle.text = getText(titleDialog ?: R.string.text_title_warning)
+    binding.textviewMessage.text = getText(message)
+    binding.buttonOk.text = getText(titleButton ?: R.string.text_button_warning)
+
+    binding.buttonOk.setOnClickListener {
+        onClick()
+        bottomSheetDialog.dismiss()
+    }
+
+    // --- LINHAS QUE FALTAVAM ---
+    bottomSheetDialog.setContentView(binding.root) // Define o conteúdo do dialog
+    bottomSheetDialog.show()                      // Exibe o dialog na tela
+}
