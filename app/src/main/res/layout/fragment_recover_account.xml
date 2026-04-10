@@ -64,7 +64,7 @@
                 android:layout_height="48dp"
                 android:hint="Digite seu e-mail"
                 android:inputType="textEmailAddress"
-                android:padding="10dp"
+                style="@style/EditTextTheme"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/bg_edit_text"/>
 
@@ -73,8 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ok"
-                android:textColor="@color/padrao"
-                app:backgroundTint="@null"
+                style="@style/ButtonTheme"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/bg_btn"/>
             <LinearLayout

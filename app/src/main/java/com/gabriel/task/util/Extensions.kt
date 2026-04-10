@@ -19,7 +19,7 @@ fun Fragment.initToolbar(toolbar: Toolbar) {
 fun Fragment.showBottomSheet(
     titleDialog: Int? = null,
     titleButton: Int? = null,
-    message: Int,
+    message: String,
     onClick: () -> Unit = {}
 ){
     val bottomSheetDialog = BottomSheetDialog(requireContext())
@@ -29,9 +29,10 @@ fun Fragment.showBottomSheet(
         BottomSheetBinding.inflate(layoutInflater, null, false)
 
     binding.textviewTitle.text = getText(titleDialog ?: R.string.text_title_warning)
-    binding.textviewMessage.text = getText(message)
-    binding.buttonOk.text = getText(titleButton ?: R.string.text_button_warning)
 
+    binding.textviewMessage.text = message
+
+    binding.buttonOk.text = getText(titleButton ?: R.string.text_button_warning)
     binding.buttonOk.setOnClickListener {
         onClick()
         bottomSheetDialog.dismiss()
@@ -40,4 +41,7 @@ fun Fragment.showBottomSheet(
     // --- LINHAS QUE FALTAVAM ---
     bottomSheetDialog.setContentView(binding.root) // Define o conteúdo do dialog
     bottomSheetDialog.show()                      // Exibe o dialog na tela
+
+    bottomSheetDialog.setContentView(binding.root)
+    bottomSheetDialog.show()
 }
