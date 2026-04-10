@@ -32,7 +32,7 @@ class SplashFragment : Fragment(){
     }
 
     private fun checkAuth(){
-        findNavController().navigate(R.id.action_splashFragment_to_id)
+        findNavController().navigate(R.id.action_splashFragment_to_navigation)
     }
 
     override fun onDestroyView() {
