@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"> <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Criar layout da tela de login do app"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/buttonBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Anterior"
+                android:src="@drawable/icback"
+                app:tint="@color/padrao"
+                app:layout_constraintTop_toBottomOf="@id/textDescription"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/buttonDelete"
+                app:layout_constraintHorizontal_chainStyle="packed" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:text="Remover"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/color_delete"
+                app:layout_constraintTop_toTopOf="@+id/buttonBack"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonBack"
+                app:layout_constraintStart_toEndOf="@+id/buttonBack"
+                app:layout_constraintEnd_toStartOf="@+id/buttonEditar" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:text="Editar"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/padrao"
+                app:layout_constraintTop_toTopOf="@+id/buttonBack"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonBack"
+                app:layout_constraintStart_toEndOf="@+id/buttonDelete"
+                app:layout_constraintEnd_toStartOf="@+id/buttonDetails" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:text="Detalhes"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/color_details"
+                app:layout_constraintTop_toTopOf="@+id/buttonBack"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonBack"
+                app:layout_constraintStart_toEndOf="@+id/buttonEditar"
+                app:layout_constraintEnd_toStartOf="@+id/buttonForward" />
+
+            <ImageButton
+                android:id="@+id/buttonForward"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Próximo"
+                android:src="@drawable/icforward"
+                app:tint="@color/padrao"
+                app:layout_constraintTop_toTopOf="@+id/buttonBack"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonBack"
+                app:layout_constraintStart_toEndOf="@+id/buttonDetails"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

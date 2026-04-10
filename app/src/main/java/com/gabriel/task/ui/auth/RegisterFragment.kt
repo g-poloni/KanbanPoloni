@@ -33,7 +33,7 @@ class RegisterFragment : Fragment() {
     }
 
     private fun initListener(){
-        binding.btnCadt.setOnClickListener {
+        binding.btCadt.setOnClickListener {
             validateData()
         }
     }

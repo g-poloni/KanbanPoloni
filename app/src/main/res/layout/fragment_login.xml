@@ -57,8 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/text_title_login_fragment"
-            android:textColor="@color/padrao"
-            app:backgroundTint="@null"
+            style="@style/ButtonTheme"
             android:layout_marginTop="16dp"
             android:background="@drawable/bg_btn"/>
         <LinearLayout

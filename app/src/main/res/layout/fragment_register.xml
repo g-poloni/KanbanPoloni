@@ -47,14 +47,14 @@
             android:id="@+id/email2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="E-mail"
+            android:text="@string/email_text"
             android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/digtEmail2"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Digite seu e-mail"
+            android:hint="@string/email_empty"
             android:inputType="textEmailAddress"
             style="@style/EditTextTheme"
             android:layout_marginTop="4dp"
@@ -64,7 +64,7 @@
             android:id="@+id/senha2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Senha"
+            android:text="@string/password_text"
             android:textColor="@color/white"
             android:layout_marginTop="16dp"/>
 
@@ -73,16 +73,16 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:inputType="textPassword"
-            android:hint="Digite sua senha"
+            android:hint="@string/password_empty"
             style="@style/EditTextTheme"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_edit_text"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnCadt"
+            android:id="@+id/btCadt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cadastrar"
+            android:text="@string/text_button_register_login_fragment"
             style="@style/ButtonTheme"
             android:layout_marginTop="16dp"
             android:background="@drawable/bg_btn"/>
