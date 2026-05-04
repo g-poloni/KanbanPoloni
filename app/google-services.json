@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "433738277528",
+    "project_id": "taskapp3-6d411",
+    "storage_bucket": "taskapp3-6d411.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433738277528:android:0c7ee2fd55aed1a29c66ed",
+        "android_client_info": {
+          "package_name": "com.gabriel.task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI91GS1_928dyQOxlAKx5h7cSKu1xVBJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
