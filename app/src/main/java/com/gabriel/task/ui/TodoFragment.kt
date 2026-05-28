@@ -6,21 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.gabriel.task.R
+import com.gabriel.task.data.model.Task
 import com.gabriel.task.databinding.FragmentTodoBinding
+import com.gabriel.task.ui.adapter.TaskAdapter
 
 class TodoFragment : Fragment() {
 
     private var _binding: FragmentTodoBinding? = null
     private val binding get() = _binding!!
-
+    private lateinit var taskAdapter: TaskAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         _binding = FragmentTodoBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -28,13 +30,32 @@ class TodoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListeners()
+        initRecyclerViewTask(getTask())
     }
 
-    private fun initListeners(){
+    private fun initListeners() {
         binding.floatingActionButton2.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_formTaskFragment)
         }
     }
+
+    private fun initRecyclerViewTask(taskList: List<Task>) {
+
+        taskAdapter = TaskAdapter(taskList)
+        binding.recyclerViewTask.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerViewTask.setHasFixedSize(true)
+
+        binding.recyclerViewTask.adapter = taskAdapter
+
+    }
+
+    private fun getTask() = listOf(
+        Task("0", "Criar nova tela do app"),
+        Task("1", "Validar informações na tela de login"),
+        Task("2", "Adicionar nova funcionalidade no app"),
+        Task("3", "Salvar token localmente"),
+        Task("2", "Criar funcionalidade de logout no app")
+    )
 
     override fun onDestroyView() {
         super.onDestroyView()
