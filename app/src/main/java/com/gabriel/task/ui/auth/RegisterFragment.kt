@@ -11,14 +11,11 @@ import com.gabriel.task.R
 import com.gabriel.task.databinding.FragmentRegisterBinding
 import com.gabriel.task.util.initToolbar
 import com.gabriel.task.util.showBottomSheet
-import com.google.firebase.auth.FirebaseAuth
 
 class RegisterFragment : Fragment() {
 
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,

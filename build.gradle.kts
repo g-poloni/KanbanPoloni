@@ -1,4 +1,4 @@
 plugins {
     alias(libs.plugins.android.application) apply false
-    id ("kotlin-parcelize")
+    alias(libs.plugins.kotlin.android) apply false
 }

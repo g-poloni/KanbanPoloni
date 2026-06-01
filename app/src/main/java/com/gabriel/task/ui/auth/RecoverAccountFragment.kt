@@ -1,11 +1,11 @@
 package com.gabriel.task.ui.auth
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.gabriel.task.R
 import com.gabriel.task.databinding.FragmentRecoverAccountBinding
@@ -14,7 +14,7 @@ import com.gabriel.task.util.showBottomSheet
 
 class RecoverAccountFragment : Fragment() {
 
-    private var _binding: FragmentRecoverAccountBinding? =null
+    private var _binding: FragmentRecoverAccountBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -32,8 +32,8 @@ class RecoverAccountFragment : Fragment() {
         initListener()
     }
 
-    private fun initListener(){
-        binding.Ok1.setOnClickListener{
+    private fun initListener() {
+        binding.Ok1.setOnClickListener {
             validateData()
         }
     }
@@ -42,9 +42,19 @@ class RecoverAccountFragment : Fragment() {
         val email = binding.digtEmail3.text.toString().trim()
 
         if (email.isNotBlank()) {
-            Toast.makeText(requireContext(), "Ok!", Toast.LENGTH_SHORT).show()
+
+            Toast.makeText(
+                requireContext(),
+                "Ok!",
+                Toast.LENGTH_SHORT
+            ).show()
+
+            findNavController().popBackStack()
+
         } else {
-            showBottomSheet(message = getString(R.string.email_empty))
+            showBottomSheet(
+                message = getString(R.string.email_empty)
+            )
         }
     }
 

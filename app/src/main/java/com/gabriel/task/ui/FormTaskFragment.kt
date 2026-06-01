@@ -1,22 +1,23 @@
 package com.gabriel.task.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.gabriel.task.databinding.FragmentFormTaskBinding
 import com.gabriel.task.util.initToolbar
-import android.widget.Toast
-import androidx.appcompat.R
 import com.gabriel.task.util.showBottomSheet
 
-class FormTaskFragment : Fragment () {
+class FormTaskFragment : Fragment() {
+
     private var _binding: FragmentFormTaskBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFormTaskBinding.inflate(inflater, container, false)
@@ -25,7 +26,9 @@ class FormTaskFragment : Fragment () {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initToolbar(binding.toolbar)
+        initListener()
     }
 
     private fun initListener() {
@@ -38,9 +41,15 @@ class FormTaskFragment : Fragment () {
         val description = binding.editTextDescricao.text.toString().trim()
 
         if (description.isNotBlank()) {
-            Toast.makeText(requireContext(), "Tudo OK!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                "Tudo OK!",
+                Toast.LENGTH_SHORT
+            ).show()
         } else {
-            showBottomSheet(message = getString(com.gabriel.task.R.string.description_eft_fragment))
+            showBottomSheet(
+                message = getString(com.gabriel.task.R.string.description_eft_fragment)
+            )
         }
     }
 
